@@ -6,3 +6,8 @@
      border-radius: 8px;
 }
 
+.visited-flags-containers img{
+       width: 120px;
+       margin-right: 10px;
+}
+
