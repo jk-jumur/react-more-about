@@ -55,8 +55,8 @@ body {
 }
 
 #root {
-  width: 1126px;
-  max-width: 100%;
+  width: 100%;
+  max-width: 1260px;
   margin: 0 auto;
   
   display: flex;

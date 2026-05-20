@@ -1,0 +1,12 @@
+.country{
+      border: 2px solid greenyellow;
+      margin: 30px;
+      padding: 20px;
+      border-radius: 30px;
+}
+
+
+.country-img{
+     width: 300px;
+     border-radius: 4px;
+}
