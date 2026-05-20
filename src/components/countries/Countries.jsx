@@ -8,6 +8,8 @@ const Countries = ({countriesPromise}) => {
      const handleVisitedCountries = (country) => {
      
            console.log('handle visited country clicked', country);
+           const newVisitedCountries = [...visitedCountries, country];
+           setVisitedCountries(newVisitedCountries);
      }
     const countriesData =  use(countriesPromise);
     const countries = countriesData.countries
@@ -15,6 +17,13 @@ const Countries = ({countriesPromise}) => {
     return (
         <div>
             <h3>In The Countries: {countries.length}</h3>
+              <h2>Total Country Visited: {visitedCountries.length}</h2>
+              <ol>
+                  {
+                     visitedCountries.map(country => <li>key={country.cca3.cca3}
+                      {country.name.common}</li>)
+                  }
+              </ol>
               <div className='countries'>
               {
                 countries.map(country => <Country key={country.cca3.cca3} country={country}  
