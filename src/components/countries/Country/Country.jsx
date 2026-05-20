@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import './Country.css'
 
 const Country = ({country}) =>{
@@ -5,12 +6,27 @@ const Country = ({country}) =>{
     //   console.log(country.flags.flags.png)
       //    console.log(country.population.population);
         // console.log(country.area.area);
+          const[visited, setVisited] = useState(false);
 
         const handleVisited = () =>{
-             console.log('visited')
+            // setVisited(true);
+
+            //system 1
+            // if(visited){
+            //     setVisited(false)
+            // } else{
+            //     setVisited(true);
+            // }
+
+             //system 2
+            // setVisited(visited ? false : true)
+
+            //system 3
+            setVisited(!visited)
         }
       return(
-         <div className="country">
+        //  <div className={`country ${visited ?'country-visited' : 'country-not-visited'}`}>
+         <div className={`country ${visited &&'country-visited'}`}>
                <img 
                src={country.flags.flags.png}
                alt={country.flags.flags.alt} 
@@ -18,7 +34,7 @@ const Country = ({country}) =>{
                <h3>Name: {country.name.common}</h3>
                <p>Population: {country.population.population}</p>
                <p>Area: {country.area.area} {country.area.area > 300000 ? "Big Country" : "Small Country"}</p>
-               <button onClick={handleVisited}>Not Visited</button>
+               <button onClick={handleVisited}>{visited? 'visited' : 'Not Visited'}</button>
            
          </div>
       )
